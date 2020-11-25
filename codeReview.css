@@ -51,9 +51,6 @@ body {
 .right-pos {
     border-left: 3px solid green;
 }
-.neutral-pos {
-    border-left: 3px solid blue;
-}
 
 
 /* Vue transition classes */

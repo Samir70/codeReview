@@ -17,7 +17,6 @@ const shuffle = arr => {
 
 const WRONG = "sortq-li wrong-pos";
 const RIGHT = "sortq-li right-pos";
-const NEUTRAL = "sortq-li neutral-pos";
 
 /**
  * This display will display a short question / description of what to do
