@@ -17,14 +17,14 @@
             <div v-if="chooseQ">
                 <input type="text" placeholder="search for..." v-model:value="searchTerm">
                 <div v-for="q of qList.filter(x => x.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1)"
-                    v-on:click="chooseQ=false">{{q.name}}
+                    v-on:click="setQ(q.id)">{{q.name}}<br />
                 </div>
             </div>
             <div v-if="!chooseQ" key="showQ">
-                <sort-q v-bind:q-data="question"
-                    v-on:user-answered="makeFeedback">
+                <sort-q v-if="!showFeedback" v-bind:q-data="question" v-on:user-answered="makeFeedback">
                 </sort-q>
-                <button v-on:click="chooseQ = true">Choose another Q</button>
+                <div v-if="showFeedback" v-for="fb of feedback">{{fb}}</div>
+                <button v-on:click="chooseQ = true; showFeedback=false">Choose another Q</button>
             </div>
         </transition>
     </div>
@@ -32,16 +32,25 @@
     <script type="module">
         // privacy.file_unique_origin set to false
         // 
-        import {qList} from './qList.js'
+        import { qList } from './qList.js'
         var mainApp = new Vue({
             el: '#mainApp',
             data: {
                 qList,
                 chooseQ: true, searchTerm: '',
-                question: qList[0]
+                question: qList[0],
+                feedback: 'default feedback',
+                showFeedback: false
             },
             methods: {
-
+                makeFeedback: function (ans) {
+                    this.feedback = [ans.mark, ans.extra];
+                    this.showFeedback = true;
+                },
+                setQ: function (qID) {
+                    this.question = qList[qID];
+                    this.chooseQ = false;
+                }
             }
         });
     </script>
