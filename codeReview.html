@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src='./resources/vue-dev.js'></script>
+    <script src='./resources/Sortable.min.js'></script>
+    <script src='./resources/vuedraggable.umd.min.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="codeReview.css">
+    <title>CodeReview</title>
+</head>
+
+<body>
+    <div id="mainApp">
+        <transition name="fade" mode="out-in" key="showChooseQ">
+            <div v-if="chooseQ">
+                <input type="text" placeholder="search for..." v-model:value="searchTerm">
+                <div v-for="q of qList.filter(x => x.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1)"
+                    v-on:click="chooseQ=false">{{q.name}}
+                </div>
+            </div>
+            <div v-if="!chooseQ" key="showQ">
+                <sort-q v-bind:q-data="question"
+                    v-on:user-answered="makeFeedback">
+                </sort-q>
+                <button v-on:click="chooseQ = true">Choose another Q</button>
+            </div>
+        </transition>
+    </div>
+    <script src="components/sortQ.js"></script>
+    <script type="module">
+        // privacy.file_unique_origin set to false
+        // 
+        import {qList} from './qList.js'
+        var mainApp = new Vue({
+            el: '#mainApp',
+            data: {
+                qList,
+                chooseQ: true, searchTerm: '',
+                question: qList[0]
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
