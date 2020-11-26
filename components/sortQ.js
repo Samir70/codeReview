@@ -76,7 +76,6 @@ Vue.component('sortQ', {
             return { status: this.userWasCorrect, mark, extra }
         },
         updateUserAnswer: function () {
-            console.log('updating the user answer classes')
             this.userAnswer.forEach((row, i) => {
                 row.class = row.id === i ? RIGHT : WRONG;
             })
@@ -89,7 +88,7 @@ Vue.component('sortQ', {
                 <div
                     v-for="item in userAnswer" 
                     v-bind:key="item.id" 
-                    v-bind:class="item.class">{{item.text}} 
+                    v-bind:class="item.class"><div class="codeSpace">{{item.text}}</div>
                 </div>
             </draggable>
             <button v-on:click="checkAnswer; $emit('user-answered', checkAnswer())" >Check Answer</button>

@@ -34,16 +34,18 @@ body {
 
 /* specific to sortq */
 .sortq-li {
-    display: block;
+    display: flex;
+    align-items: center;
     background: white;
     margin: 2px 7px 2px 7px;
     padding-left: 3px;
     width: auto;
     height: 30px;
-    line-height: 30px;
-    text-align: left;
     box-shadow: 3px 3px 5px 0px #ccc;
     cursor: move;
+}
+.codeSpace {
+    white-space: pre-wrap;
 }
 .wrong-pos {
     border-left: 3px solid red;
