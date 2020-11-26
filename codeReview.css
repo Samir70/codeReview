@@ -32,6 +32,21 @@ body {
     text-align: center;
 }
 
+.q-card {
+    display: block;
+    background: white;
+    padding:5px;
+    margin: 2px;
+    /* border: 2px solid #6FF; */
+    border-radius: 30%;
+    box-shadow: 3px 3px 5px 0px #ccc;
+    cursor: pointer;
+}
+
+.q-card:hover {
+    background: pink
+}
+
 /* specific to sortq */
 .sortq-li {
     display: flex;
@@ -43,6 +58,9 @@ body {
     height: 30px;
     box-shadow: 3px 3px 5px 0px #ccc;
     cursor: move;
+}
+.sortq-li:hover {
+    background: pink;
 }
 .codeSpace {
     white-space: pre-wrap;
