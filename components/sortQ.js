@@ -61,7 +61,7 @@ Vue.component('sortQ', {
             let blandFB = 'You had a go!';
             let noMistakes = true;
             this.userAnswer.forEach((r, i) => {
-                if (r.id !== i) { noMistakes = false }
+                if (r.text !== this.ans[i]) { noMistakes = false }
             })
             if (noMistakes) {
                 this.userWasCorrect = true;
@@ -76,8 +76,9 @@ Vue.component('sortQ', {
             return { status: this.userWasCorrect, mark, extra }
         },
         updateUserAnswer: function () {
+            console.log(this.userAnswer.map(x => x.id))
             this.userAnswer.forEach((row, i) => {
-                row.class = row.id === i ? RIGHT : WRONG;
+                row.class = row.text === this.ans[i] ? RIGHT : WRONG;
             })
         }
     },
