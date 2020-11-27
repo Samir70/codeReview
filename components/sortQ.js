@@ -84,7 +84,7 @@ Vue.component('sortQ', {
     },
     template: `
         <div>
-            <p>{{qText}}</p>
+            <h3>{{qText}}</h3>
             <draggable v-model="userAnswer" v-on:end="updateUserAnswer" >
                 <div
                     v-for="item in userAnswer" 

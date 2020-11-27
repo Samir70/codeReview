@@ -12,9 +12,12 @@
 </head>
 
 <body>
+    <h1>Code Review</h1>
     <div id="mainApp">
         <transition name="fade" mode="out-in" key="showChooseQ">
             <div v-if="chooseQ">
+                <h3>Beginning to forget how you solved certain coding problems? <br />
+                     Review your code without having to type it all in again.</h3>
                 <input type="text" placeholder="search for..." v-model:value="searchTerm">
                 <button v-for="q of qList.filter(x => x.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1)"
                     v-on:click="setQ(q.id)"
