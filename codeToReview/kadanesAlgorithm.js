@@ -1,5 +1,6 @@
 export const kadane = {
     name: "Kadane's algorithm to find maximum subarray sum",
+    author: "Samir70",
     code: [
         "const kadane = (arr) => {",
         "    if (arr.length === 1) {return arr[0]}",

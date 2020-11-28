@@ -21,8 +21,15 @@
                 <fieldset>
                     <legend>Determine which questions to include in the list</legend>
                     <input type="text" placeholder="search for..." v-model:value="searchTerm">
+                    <div>
+                        <input type="checkbox" id="onlyDefAuthor" checked="true"
+                        v-bind:value="defaultAuthor" v-model="author">
+                        <label for="onlyDefAuthor">only the code of {{defaultAuthor}}</label>
+                    </div>
                 </fieldset>
-                <button v-for="q of qList.filter(x => x.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1)"
+                <button v-for="q of qList.filter(
+                        x => x.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+                        && x.author.search(author[0]) !== -1)"
                     v-on:click="setQ(q.id)"
                     class="q-card">{{q.name}}
                 </button>
@@ -46,6 +53,7 @@
                 qList,
                 chooseQ: true, searchTerm: '',
                 question: qList[0],
+                defaultAuthor: 'Samir70', author: ['Samir70'],
                 feedback: 'default feedback',
                 showFeedback: false
             },

@@ -1,5 +1,6 @@
 export const sortColors2pass = {
     name: "sort array 3 colours -- two pass method",
+    author: "Samir70",
     code: [
         "var sortColors2pass = function(nums) {",
         "    let tally = Array(3).fill(0);",
@@ -17,6 +18,7 @@ export const sortColors2pass = {
 
 export const sortColors1pass = {
     name: "sort array of 3 colours in one pass",
+    author: "Samir70",
     code: [
         "var sortColors1pass = nums => {",
         "    var low = 0, high = nums.length - 1;",
