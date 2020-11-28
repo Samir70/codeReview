@@ -1,6 +1,7 @@
 export const inorderIterative = {
     name: "iterative inorder traversal of binary tree without overwriting",
     author: "Samir70",
+    language: "javaScript",
     code: [
         "const inorderTraversal = root => {",
         "    let inorder = [];",
@@ -23,6 +24,7 @@ export const inorderIterative = {
 export const inorderRecursive = {
     name: "recursive inorder traversal of binary tree",
     author: "Samir70",
+    language: "javaScript",
     code: [
         "const inorderTraversal = root => {",
         "    if (root === null) {return []}",

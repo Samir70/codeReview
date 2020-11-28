@@ -1,12 +1,15 @@
 import {sortColors1pass, sortColors2pass} from './codeToReview/sortColors.js';
+// array tasks
 import {kadane} from './codeToReview/kadanesAlgorithm.js';
+import {mergeIntervals} from './codeToReview/mergeIntervals.js'
 // tree functions
 import {inorderIterative, inorderRecursive} from './codeToReview/treeTraversals.js'
 import {helloWorld} from './codeToReview/helloWorld.js'
 
 export const qList = [
     sortColors1pass, sortColors2pass,
-    kadane,
+    // array tasks
+    kadane, mergeIntervals,
     // tree functions
     inorderIterative, inorderRecursive,
     helloWorld
