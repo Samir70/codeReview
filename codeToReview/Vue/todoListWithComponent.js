@@ -1,0 +1,32 @@
+export const vueTodoWComponent = {
+    name: "todoList with a Vue component",
+    author: "Samir70",
+    language: "Vue",
+    code: [        
+        "<div id='todos'>",
+        "<h1>Things to buy</h1>",
+        "<ol>",
+        "    <todo-item ",
+        "        v-for='item in groceryList'",
+        "        v-bind:todo='item'",
+        "        v-bind:key='item.id'",
+        "         />",
+        "</ol>",
+        "</div>",
+        "<script>",
+        "Vue.component('todo-item', {",
+        "    props: ['todo'],",
+        "    template: '<li>{{todo.text}}</li>'",
+        "});",
+        "const todoList = new Vue({",
+        "    el:'#todos',",
+        "    data:{",
+        "        groceryList: [",
+        "            {id:0, text:'kryptonite'},",
+        "            {id:1, text:'secret bunker'}",
+        "        ]",
+        "    }",
+        "})",
+        "</script>"
+    ]
+};

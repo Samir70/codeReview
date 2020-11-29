@@ -4,7 +4,9 @@ import {kadane} from './codeToReview/kadanesAlgorithm.js';
 import {mergeIntervals} from './codeToReview/mergeIntervals.js'
 // tree functions
 import {inorderIterative, inorderRecursive} from './codeToReview/treeTraversals.js'
-import {helloWorld} from './codeToReview/helloWorld.js'
+import {helloWorld} from './codeToReview/helloWorld.js';
+// Vue 
+import {vueTodoWComponent} from './codeToReview/Vue/todoListWithComponent.js'
 
 export const qList = [
     sortColors1pass, sortColors2pass,
@@ -12,5 +14,7 @@ export const qList = [
     kadane, mergeIntervals,
     // tree functions
     inorderIterative, inorderRecursive,
-    helloWorld
+    helloWorld,
+    // Vue
+    vueTodoWComponent
 ].map((x, i) => {return {...x, id:i}})
