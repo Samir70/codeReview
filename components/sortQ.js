@@ -19,17 +19,13 @@ const WRONG = "sortq-li wrong-pos";
 const RIGHT = "sortq-li right-pos";
 
 /**
- * This display will display a short question / description of what to do
+ * This will display a short question / description of what to do
  * Then it will have a column of options which can be rearranged into the correct order
  * -- rows are highlighted in green to indicate that they are correct from the top
  * -- rows are highlighted in amber to indicate that they are in the wrong position.
  * 
- * When the answer is checked it is marked and an object passed as part of the event
- * The object contains:
- * status: boolean for user was correct
- * mark: first bit of feedback, eg: 'correct', 'wrong!'
- * extra: something like confirmation of the answer.
- * 
+ * The number of rows in correct position is counted 
+ * and an animation is played when all rows are correct
  */
 
 Vue.component('sortQ', {
@@ -38,10 +34,7 @@ Vue.component('sortQ', {
     },
     data: function () {
         return {
-            userWasCorrect: false,
             correctRows:0,
-            draggedItemID: null, droppedOnID: null,
-            enteredElement: null,
             userAnswer: shuffle(
                 this.qData.code.map((x, i) => {
                     return {
@@ -64,7 +57,9 @@ Vue.component('sortQ', {
             });
             console.log(this.correctRows, 'out of', this.userAnswer.length, 'correct');
             if (this.correctRows === this.userAnswer.length) {
-                this.$emit('user-answered', {status:true, mark:'All correct!!!', extra:'more feedback'})
+                gsap.to('.sortq-li', {
+                    duration:0.5, margin:15, opacity:0.7, ease:'bounce', repeat:1, yoyo:true
+                })
             }
         }
     },

@@ -6,6 +6,7 @@
     <script src='./resources/vue.min.js'></script>
     <script src='./resources/Sortable.min.js'></script>
     <script src='./resources/vuedraggable.umd.min.js'></script>
+    <script src="./resources/gsap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="codeReview.css">
     <title>CodeReview</title>
@@ -33,7 +34,7 @@
             </div>
             <div v-if="!chooseQ" key="showQ">
                 <button class="chooseQbutton" v-on:click="chooseQ = true; showFeedback=false">Choose another Q</button>
-                <sort-q v-if="!showFeedback" v-bind:q-data="question" v-on:user-answered="makeFeedback">
+                <sort-q v-if="!showFeedback" v-bind:q-data="question" >
                 </sort-q>
                 <div v-if="showFeedback" v-for="fb of feedback">{{fb}}</div>
             </div>
