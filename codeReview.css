@@ -40,6 +40,14 @@ body {
     padding: 5px;
     border-radius: 10%;
 }
+.chooseQbutton {
+    display: block;
+    margin: auto;
+    background: rgb(235, 41, 235);
+    color: white;
+    padding: 5px;
+    border-radius: 10%;
+}
 
 fieldset {
     display:flex;

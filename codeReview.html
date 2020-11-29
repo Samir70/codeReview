@@ -32,10 +32,10 @@
                 </button>
             </div>
             <div v-if="!chooseQ" key="showQ">
+                <button class="chooseQbutton" v-on:click="chooseQ = true; showFeedback=false">Choose another Q</button>
                 <sort-q v-if="!showFeedback" v-bind:q-data="question" v-on:user-answered="makeFeedback">
                 </sort-q>
                 <div v-if="showFeedback" v-for="fb of feedback">{{fb}}</div>
-                <button v-on:click="chooseQ = true; showFeedback=false">Choose another Q</button>
             </div>
         </transition>
     </div>
