@@ -32,6 +32,15 @@ body {
     text-align: center;
 }
 
+.rndTopicButton {
+    display: block;
+    margin: auto;
+    background: purple;
+    color: white;
+    padding: 5px;
+    border-radius: 10%;
+}
+
 fieldset {
     display:flex;
     flex-direction: column;
