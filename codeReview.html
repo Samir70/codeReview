@@ -24,7 +24,7 @@
                     <legend>Determine which questions to include in the list</legend>
                     <input type="text" placeholder="search for..." v-on:input="filterQs" v-model:value="searchTerm">
                     <div>
-                        <input type="checkbox" id="onlyDefAuthor" vi-n:change="filterQs" checked="true" v-bind:value="defaultAuthor"
+                        <input type="checkbox" id="onlyDefAuthor" v-on:change="filterQs" checked="true" v-bind:value="defaultAuthor"
                             v-model="author">
                             <label for="onlyDefAuthor">only the code of {{defaultAuthor}}</label>
                         </div>
