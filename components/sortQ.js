@@ -21,7 +21,6 @@ const RIGHT = "sortq-li right-pos";
 /**
  * This display will display a short question / description of what to do
  * Then it will have a column of options which can be rearranged into the correct order
- * There is a give-hint option. When this is set to true:
  * -- rows are highlighted in green to indicate that they are correct from the top
  * -- rows are highlighted in amber to indicate that they are in the wrong position.
  * 
@@ -40,6 +39,7 @@ Vue.component('sortQ', {
     data: function () {
         return {
             userWasCorrect: false,
+            correctRows:0,
             draggedItemID: null, droppedOnID: null,
             enteredElement: null,
             userAnswer: shuffle(
@@ -56,30 +56,16 @@ Vue.component('sortQ', {
         ans: function () { return this.qData.code }
     },
     methods: {
-        checkAnswer: function () {
-            let mark = '';
-            let blandFB = 'You had a go!';
-            let noMistakes = true;
-            this.userAnswer.forEach((r, i) => {
-                if (r.text !== this.ans[i]) { noMistakes = false }
-            })
-            if (noMistakes) {
-                this.userWasCorrect = true;
-                mark = 'Correct! '
-                blandFB = 'Wow! Way to go!!!';
-            } else {
-                this.userWasCorrect = false;
-                mark = 'Wrong! '
-                blandFB = 'Shame! Maybe Next time!';
-            }
-            let extra = (this.qData.feedback || blandFB)
-            return { status: this.userWasCorrect, mark, extra }
-        },
         updateUserAnswer: function () {
-            console.log(this.userAnswer.map(x => x.id))
+            this.correctRows = 0;
             this.userAnswer.forEach((row, i) => {
                 row.class = row.text === this.ans[i] ? RIGHT : WRONG;
-            })
+                this.correctRows += row.class === RIGHT ? 1 : 0
+            });
+            console.log(this.correctRows, 'out of', this.userAnswer.length, 'correct');
+            if (this.correctRows === this.userAnswer.length) {
+                this.$emit('user-answered', {status:true, mark:'All correct!!!', extra:'more feedback'})
+            }
         }
     },
     template: `
@@ -92,7 +78,6 @@ Vue.component('sortQ', {
                     v-bind:class="item.class"><div class="codeSpace">{{item.text}}</div>
                 </div>
             </draggable>
-            <button v-on:click="checkAnswer; $emit('user-answered', checkAnswer())" >Check Answer</button>
         </div>
     `
 })
