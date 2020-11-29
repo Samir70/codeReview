@@ -17,21 +17,18 @@
         <transition name="fade" mode="out-in" key="showChooseQ">
             <div v-if="chooseQ">
                 <h3>Beginning to forget how you solved certain coding problems? <br />
-                     Review your code without having to type it all in again.</h3>
+                    Review your code without having to type it all in again.</h3>
+                <!-- <button class="rndTopicButton" v-on:click="randomQ">Pick a random piece of code</button> -->
                 <fieldset>
                     <legend>Determine which questions to include in the list</legend>
-                    <input type="text" placeholder="search for..." v-model:value="searchTerm">
+                    <input type="text" placeholder="search for..." v-on:input="filterQs" v-model:value="searchTerm">
                     <div>
-                        <input type="checkbox" id="onlyDefAuthor" checked="true"
-                        v-bind:value="defaultAuthor" v-model="author">
+                        <input type="checkbox" id="onlyDefAuthor" vi-n:change="filterQs" checked="true" v-bind:value="defaultAuthor"
+                            v-model="author">
                         <label for="onlyDefAuthor">only the code of {{defaultAuthor}}</label>
                     </div>
                 </fieldset>
-                <button v-for="q of qList.filter(
-                        x => x.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1
-                        && x.author.search(author[0]) !== -1)"
-                    v-on:click="setQ(q.id)"
-                    class="q-card">{{q.name}}
+                <button v-for="q of filteredQs" v-on:click="setQ(q.id)" class="q-card">{{q.name}}
                 </button>
             </div>
             <div v-if="!chooseQ" key="showQ">
@@ -47,27 +44,36 @@
         // privacy.file_unique_origin set to false
         // 
         import { qList } from './qList.js'
-        var mainApp = new Vue({
-            el: '#mainApp',
-            data: {
-                qList,
-                chooseQ: true, searchTerm: '',
-                question: qList[0],
-                defaultAuthor: 'Samir70', author: ['Samir70'],
-                feedback: 'default feedback',
-                showFeedback: false
-            },
-            methods: {
-                makeFeedback: function (ans) {
-                    this.feedback = [ans.mark, ans.extra];
-                    this.showFeedback = true;
+            var mainApp = new Vue({
+                el: '#mainApp',
+                data: {
+                    filteredQs: [],
+                    chooseQ: true, searchTerm: '',
+                    question: qList[0],
+                    defaultAuthor: 'Samir70', author: ['Samir70'],
+                    feedback: 'default feedback',
+                    showFeedback: false
                 },
-                setQ: function (qID) {
-                    this.question = qList[qID];
-                    this.chooseQ = false;
+                created: function () {
+                    this.filterQs()
+                },
+                methods: {
+                    makeFeedback: function (ans) {
+                        this.feedback = [ans.mark, ans.extra];
+                        this.showFeedback = true;
+                    },
+                    filterQs: function () {
+                        this.filteredQs = qList.filter(item =>
+                            item.name.toLowerCase().search(this.searchTerm.toLowerCase()) !== -1
+                            && item.author.search(this.author[0]) !== -1
+                        )
+                    },
+                    setQ: function (qID) {
+                        this.question = qList[qID];
+                        this.chooseQ = false;
+                    }
                 }
-            }
-        });
+            });
     </script>
 </body>
 
