@@ -21,7 +21,7 @@ export const findTrioWithSum = {
         "    for (let i=0; i<sorted.length;i++) {",
         "        let outcome = findPairSorted(sorted.slice(i+1), 2020-sorted[i]);",
         "        if (outcome !== -1) {",
-        "            return [sorted[i], ...outcome, 'product is', sorted[i]*outcome[0]*outcome[1]]",
+        "            return [sorted[i], ...outcome]",
         "        }",
         "    }",
         "}"
