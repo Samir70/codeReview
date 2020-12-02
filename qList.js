@@ -1,7 +1,7 @@
 import {sortColors1pass, sortColors2pass} from './codeToReview/sortColors.js';
 // array tasks
-import {kadane} from './codeToReview/kadanesAlgorithm.js';
-import {mergeIntervals} from './codeToReview/mergeIntervals.js'
+import {kadane} from './codeToReview/ArrayTasks/kadanesAlgorithm.js';
+import {mergeIntervals} from './codeToReview/ArrayTasks/mergeIntervals.js'
 // tree functions
 import {inorderIterative, inorderRecursive} from './codeToReview/treeTraversals.js'
 import {helloWorld} from './codeToReview/helloWorld.js';
