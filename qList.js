@@ -3,6 +3,7 @@ import { sortColors1pass, sortColors2pass } from './codeToReview/sortColors.js';
 import { kadane } from './codeToReview/ArrayTasks/kadanesAlgorithm.js';
 import { mergeIntervals } from './codeToReview/ArrayTasks/mergeIntervals.js';
 import { findTrioWithSum } from './codeToReview/ArrayTasks/findTrioWithSum.js';
+import { longestCommonSubsequence } from './codeToReview/ArrayTasks/longestCommonSubSeq.js';
 // tree functions
 import { inorderIterative, inorderRecursive } from './codeToReview/treeTraversals.js'
 import { helloWorld } from './codeToReview/helloWorld.js';
@@ -16,6 +17,7 @@ export const qList = [
     sortColors1pass, sortColors2pass,
     // array tasks
     kadane, mergeIntervals, findTrioWithSum,
+    longestCommonSubsequence,
     // tree functions
     inorderIterative, inorderRecursive,
     // design objects
