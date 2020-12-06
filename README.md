@@ -15,3 +15,6 @@ In anticiapation that others will get involved, I have included an author proper
 ## interface
 Still under construction, but my aim is to use this rather than make it pretty.
 I have used Vue, GSAP and draggable. I may add a database in the future.
+
+## re-use
+Feel free to use this yourself. A reference would be nice. And, if you like, you can [buy me a coffee](https://www.buymeacoffee.com/Samir70)
