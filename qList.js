@@ -4,6 +4,8 @@ import { kadane } from './codeToReview/ArrayTasks/kadanesAlgorithm.js';
 import { mergeIntervals } from './codeToReview/ArrayTasks/mergeIntervals.js';
 import { findTrioWithSum } from './codeToReview/ArrayTasks/findTrioWithSum.js';
 import { longestCommonSubsequence } from './codeToReview/ArrayTasks/longestCommonSubSeq.js';
+// linked list tasks
+import { mergeTwoListsRecursive, mergesortedListsIterative } from './codeToReview/listTasks/mergeSortedLists.js';
 // genarate tasks
 import { klarnerRado, tribonacci } from './codeToReview/generateTasks/sequences.js'
 // tree functions
@@ -20,6 +22,8 @@ export const qList = [
     // array tasks
     kadane, mergeIntervals, findTrioWithSum,
     longestCommonSubsequence,
+    // linked list tasks
+    mergesortedListsIterative, mergeTwoListsRecursive,
     // generate tasks
     tribonacci, klarnerRado,
     // tree functions
