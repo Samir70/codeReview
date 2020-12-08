@@ -6,7 +6,7 @@ import { findTrioWithSum } from './codeToReview/ArrayTasks/findTrioWithSum.js';
 import { longestCommonSubsequence } from './codeToReview/ArrayTasks/longestCommonSubSeq.js';
 // linked list tasks
 import { mergeTwoListsRecursive, mergesortedListsIterative } from './codeToReview/listTasks/mergeSortedLists.js';
-// backtraking tasks
+// backtracking tasks
 import { uniquePathsIII } from './codeToReview/backtrackingTasks/uniquePaths.js'
 // genarate tasks
 import { klarnerRado, tribonacci } from './codeToReview/generateTasks/sequences.js'
@@ -26,6 +26,8 @@ export const qList = [
     longestCommonSubsequence,
     // linked list tasks
     mergesortedListsIterative, mergeTwoListsRecursive,
+    // backtracking tasks
+    uniquePathsIII,
     // generate tasks
     tribonacci, klarnerRado,
     // tree functions
