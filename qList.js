@@ -1,6 +1,6 @@
 import { sortColors1pass, sortColors2pass } from './codeToReview/sortColors.js';
 // array tasks
-import { kadane } from './codeToReview/ArrayTasks/kadanesAlgorithm.js';
+import { kadane, fisherYatesShuffle } from './codeToReview/ArrayTasks/arrayTasks.js';
 import { mergeIntervals } from './codeToReview/ArrayTasks/mergeIntervals.js';
 import { findTrioWithSum } from './codeToReview/ArrayTasks/findTrioWithSum.js';
 import { longestCommonSubsequence } from './codeToReview/ArrayTasks/longestCommonSubSeq.js';
@@ -22,7 +22,8 @@ export const qList = [
     helloWorld,
     sortColors1pass, sortColors2pass,
     // array tasks
-    kadane, mergeIntervals, findTrioWithSum,
+    kadane, fisherYatesShuffle,
+    mergeIntervals, findTrioWithSum,
     longestCommonSubsequence,
     // linked list tasks
     mergesortedListsIterative, mergeTwoListsRecursive,
