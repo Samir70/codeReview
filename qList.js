@@ -4,6 +4,8 @@ import { kadane, fisherYatesShuffle } from './codeToReview/ArrayTasks/arrayTasks
 import { mergeIntervals } from './codeToReview/ArrayTasks/mergeIntervals.js';
 import { findTrioWithSum } from './codeToReview/ArrayTasks/findTrioWithSum.js';
 import { longestCommonSubsequence } from './codeToReview/ArrayTasks/longestCommonSubSeq.js';
+// graph tasks
+import { topologicalOrder, bisectGraph } from './codeToReview/graphs.js';
 // linked list tasks
 import { mergeTwoListsRecursive, mergesortedListsIterative } from './codeToReview/listTasks/mergeSortedLists.js';
 // backtracking tasks
@@ -25,6 +27,8 @@ export const qList = [
     kadane, fisherYatesShuffle,
     mergeIntervals, findTrioWithSum,
     longestCommonSubsequence,
+    // graph tasks
+    topologicalOrder, bisectGraph,
     // linked list tasks
     mergesortedListsIterative, mergeTwoListsRecursive,
     // backtracking tasks
