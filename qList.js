@@ -7,7 +7,7 @@ import { longestCommonSubsequence } from './codeToReview/ArrayTasks/longestCommo
 // graph tasks
 import { topologicalOrder, bisectGraph } from './codeToReview/graphs.js';
 // linked list tasks
-import { mergeTwoListsRecursive, mergesortedListsIterative } from './codeToReview/listTasks/mergeSortedLists.js';
+import { mergeTwoListsRecursive, mergesortedListsIterative, mergeKLists } from './codeToReview/listTasks/mergeSortedLists.js';
 // backtracking tasks
 import { uniquePathsIII } from './codeToReview/backtrackingTasks/uniquePaths.js'
 // genarate tasks
@@ -30,7 +30,7 @@ export const qList = [
     // graph tasks
     topologicalOrder, bisectGraph,
     // linked list tasks
-    mergesortedListsIterative, mergeTwoListsRecursive,
+    mergesortedListsIterative, mergeTwoListsRecursive, mergeKLists,
     // backtracking tasks
     uniquePathsIII,
     // generate tasks

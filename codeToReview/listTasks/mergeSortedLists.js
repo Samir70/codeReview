@@ -38,3 +38,24 @@ export const mergeTwoListsRecursive = {
         "};"
     ]
 }
+
+export const mergeKLists = {
+    name: "Merge k sorted lists, divide and conquer",
+    author: "Samir70",
+    language: "javaScript",
+    code: [
+        "var mergeKLists = function(lists) {",
+        "    while (lists.length > 1) {",
+        "        let left = 0, right = lists.length - 1;",
+        "        while (left < right) {",
+        "            let merged = mergeTwoLists(lists[left], lists[right]);",
+        "            lists.pop();",
+        "            lists[left] = merged;",
+        "            left++; right--;",
+        "        }",
+        "    }",
+        "    return lists[0] || null",
+        "};"
+    ]
+}
+
