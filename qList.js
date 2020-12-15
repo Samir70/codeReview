@@ -5,7 +5,7 @@ import { mergeIntervals } from './codeToReview/ArrayTasks/mergeIntervals.js';
 import { findTrioWithSum } from './codeToReview/ArrayTasks/findTrioWithSum.js';
 import { longestCommonSubsequence } from './codeToReview/ArrayTasks/longestCommonSubSeq.js';
 // graph tasks
-import { topologicalOrder, bisectGraph } from './codeToReview/graphs.js';
+import { topologicalOrder, bisectGraph, subtreeWithAllDeepest } from './codeToReview/graphs.js';
 // linked list tasks
 import { mergeTwoListsRecursive, mergesortedListsIterative, mergeKLists } from './codeToReview/listTasks/mergeSortedLists.js';
 // backtracking tasks
@@ -28,7 +28,7 @@ export const qList = [
     mergeIntervals, findTrioWithSum,
     longestCommonSubsequence,
     // graph tasks
-    topologicalOrder, bisectGraph,
+    topologicalOrder, bisectGraph, subtreeWithAllDeepest,
     // linked list tasks
     mergesortedListsIterative, mergeTwoListsRecursive, mergeKLists,
     // backtracking tasks

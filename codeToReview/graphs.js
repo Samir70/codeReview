@@ -43,3 +43,38 @@ export const bisectGraph = {
     ]
 }
 
+export const subtreeWithAllDeepest = {
+    name: "Find the LCA of deepest nodes in binary tree (with Euler Path)",
+    author: "Samir70 rowe1337 ajna",
+    language: "javaScript",
+    code: [
+        "const subtreeWithAllDeepest = root => {",
+        "    let depth = [], path = [];",
+        "    const eulerianPath = (n, d) => {",
+        "        path.push(n); depth.push(d);",
+        "        if (n.left) {",
+        "            eulerianPath(n.left, d+1);",
+        "            path.push(n); depth.push(d)",
+        "        }",
+        "        if (n.right) {",
+        "            eulerianPath(n.right, d+1);",
+        "            path.push(n); depth.push(d)",
+        "        }",
+        "    }",
+        "    eulerianPath(root, 0);",
+        "    let maxD = 0, minD = 0, out = 0;",
+        "    for (let i = 1; i<depth.length; i++) {",
+        "        if (depth[i] > depth[maxD]) {",
+        "            maxD = i; minD = i; out = i",
+        "        } else if (depth[i] === depth[maxD]) {",
+        "            out = minD",
+        "        } else if (depth[i] < depth[minD]) {",
+        "            minD = i",
+        "        }",
+        "    }",
+        "    return path[out]",
+        "}"
+    ]
+}
+
+
