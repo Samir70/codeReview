@@ -18,6 +18,8 @@ import { inorderIterative, inorderRecursive } from './codeToReview/treeTraversal
 import { helloWorld } from './codeToReview/helloWorld.js';
 // design objects
 import { stockSpanner } from './codeToReview/stockSpan.js'
+// properties 
+import { longestPalindrome } from './codeToReview/Properties/properties.js'
 // Vue 
 import { vueTodoWComponent } from './codeToReview/Vue/todoListWithComponent.js'
 
@@ -41,6 +43,8 @@ export const qList = [
     inorderIterative, inorderRecursive,
     // design objects
     stockSpanner,
+    // properties
+    longestPalindrome,
     // Vue
     vueTodoWComponent
 ].map((x, i) => { return { ...x, id: i } })
