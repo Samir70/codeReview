@@ -3,6 +3,7 @@ import { sortColors1pass, sortColors2pass } from './codeToReview/sortColors.js';
 import { kadane, fisherYatesShuffle } from './codeToReview/ArrayTasks/arrayTasks.js';
 import { mergeIntervals } from './codeToReview/ArrayTasks/mergeIntervals.js';
 import { findTrioWithSum } from './codeToReview/ArrayTasks/findTrioWithSum.js';
+import { unsortedSubarray, unsortedSubarrayN2} from './codeToReview/ArrayTasks/smallestUnsortedSubarray.js'
 import { longestCommonSubsequence } from './codeToReview/ArrayTasks/longestCommonSubSeq.js';
 // graph tasks
 import { topologicalOrder, bisectGraph, subtreeWithAllDeepest, dijkstrasAlgorithm } from './codeToReview/graphs.js';
@@ -29,6 +30,7 @@ export const qList = [
     // array tasks
     kadane, fisherYatesShuffle,
     mergeIntervals, findTrioWithSum,
+    unsortedSubarray, unsortedSubarrayN2,
     longestCommonSubsequence,
     // graph tasks
     topologicalOrder, bisectGraph, subtreeWithAllDeepest, dijkstrasAlgorithm,
