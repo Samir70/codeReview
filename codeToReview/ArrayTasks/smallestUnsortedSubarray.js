@@ -40,16 +40,13 @@ export const unsortedSubarray = {
         "        if (nums[right] >= nums[right - 1]) { right-- }",
         "        else { break }",
         "    }",
-        "    // console.log(left, right)",
         "    let min = nums[left], max = nums[right];",
         "    for (let i = left; i <= right; i++) {",
         "        min = Math.min(min, nums[i]);",
         "        max = Math.max(max, nums[i]);",
         "    }",
-        "    // console.log('max, min', max, min)",
         "    while (left > 0 && nums[left - 1] > min) { left-- }",
         "    while (right < nums.length - 1 && nums[right + 1] < max) { right++ }",
-        "    // console.log(left, right)",
         "    return right - left > 0 ? right - left + 1 : 0",
         "}"
     ]
