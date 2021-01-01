@@ -35,3 +35,22 @@ export const kadane = {
         "}"
     ]
 };
+
+export const nextGreaterElement = {
+    name: "replace elements of nums1 with first successor in nums2 that is greater",
+    author: "Samir70",
+    language: "javaScript",
+    code: [
+        "const nextGreaterElement = (nums1, nums2) => {",
+        "    let stack = [];",
+        "    let hash = new Map();",
+        "    for (let n of nums2) {",
+        "        while (stack.length && stack[stack.length - 1] < n) {",
+        "            hash.set(stack.pop(), n)",
+        "        }",
+        "        stack.push(n)",
+        "    }",
+        "    return nums1.map(n => hash.has(n) ? hash.get(n) : -1)",
+        "}"
+    ]
+}
