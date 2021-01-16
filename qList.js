@@ -1,6 +1,6 @@
 import { sortColors1pass, sortColors2pass } from './codeToReview/sortColors.js';
 // array tasks
-import { kadane, fisherYatesShuffle, nextGreaterElement } from './codeToReview/ArrayTasks/arrayTasks.js';
+import { kadane, fisherYatesShuffle, nextGreaterElement, firstMissingPositive } from './codeToReview/ArrayTasks/arrayTasks.js';
 import { mergeIntervals } from './codeToReview/ArrayTasks/mergeIntervals.js';
 import { findTrioWithSum } from './codeToReview/ArrayTasks/findTrioWithSum.js';
 import { unsortedSubarray, unsortedSubarrayN2} from './codeToReview/ArrayTasks/smallestUnsortedSubarray.js'
@@ -28,7 +28,7 @@ export const qList = [
     helloWorld,
     sortColors1pass, sortColors2pass,
     // array tasks
-    kadane, fisherYatesShuffle, nextGreaterElement,
+    kadane, fisherYatesShuffle, nextGreaterElement, firstMissingPositive,
     mergeIntervals, findTrioWithSum,
     unsortedSubarray, unsortedSubarrayN2,
     longestCommonSubsequence,

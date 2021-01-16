@@ -54,3 +54,21 @@ export const nextGreaterElement = {
         "}"
     ]
 }
+
+export const firstMissingPositive = {
+    name: "find the first missing positive integer",
+    author: "Samir70",
+    language: "javaScript",
+    code: [
+        "const firstMissingPositive = (nums) => {",
+        "    let hash = {}",
+        "    for (let n of nums) {",
+        "        if (n > 0 && n <= nums.length) { hash[n] = true }",
+        "    }",
+        "    for (let i = 1; i <= nums.length; i++) {",
+        "        if (hash[i] === undefined) { return i }",
+        "    }",
+        "    return nums.length + 1 // the elements of nums had all of 1..nums.length",
+        "};"
+    ]
+}
