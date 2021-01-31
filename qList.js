@@ -13,7 +13,8 @@ import { mergeTwoListsRecursive, mergesortedListsIterative, mergeKLists } from '
 import { uniquePathsIII } from './codeToReview/backtrackingTasks/uniquePaths.js'
 // genarate tasks
 import { klarnerRado, tribonacci } from './codeToReview/generateTasks/sequences.js';
-import { removeKDigits } from './codeToReview/generateTasks/removeKDigits.js'
+import { removeKDigits } from './codeToReview/generateTasks/removeKDigits.js';
+import { nextPermutation } from './codeToReview/generateTasks/nextPermutation.js'
 // tree functions
 import { inorderIterative, inorderRecursive } from './codeToReview/treeTraversals.js'
 import { helloWorld } from './codeToReview/helloWorld.js';
@@ -41,6 +42,7 @@ export const qList = [
     // generate tasks
     tribonacci, klarnerRado,
     removeKDigits,
+    nextPermutation,
     // tree functions
     inorderIterative, inorderRecursive,
     // design objects
