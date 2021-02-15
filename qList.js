@@ -14,6 +14,7 @@ import { uniquePathsIII } from './codeToReview/backtrackingTasks/uniquePaths.js'
 // genarate tasks
 import { klarnerRado, tribonacci } from './codeToReview/generateTasks/sequences.js';
 import { removeKDigits } from './codeToReview/generateTasks/removeKDigits.js';
+import { reverseDigits } from './codeToReview/generateTasks/reverseDigits.js'
 import { nextPermutation } from './codeToReview/generateTasks/nextPermutation.js'
 // tree functions
 import { inorderIterative, inorderRecursive } from './codeToReview/treeTraversals.js'
@@ -41,7 +42,7 @@ export const qList = [
     uniquePathsIII,
     // generate tasks
     tribonacci, klarnerRado,
-    removeKDigits,
+    removeKDigits, reverseDigits,
     nextPermutation,
     // tree functions
     inorderIterative, inorderRecursive,
